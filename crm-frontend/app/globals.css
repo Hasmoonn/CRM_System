@@ -1,0 +1,335 @@
+@import "tailwindcss";
+
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Serif:wght@600&display=swap");
+
+@theme {
+  --color-primary: #006948;
+  --color-primary-hover: #059669;
+  --color-on-primary: #ffffff;
+
+  --color-surface: #ffffff;
+  --color-surface-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-background: #f8fafc;
+
+  --color-on-surface: #111827;
+  --color-on-surface-variant: #374151;
+  --color-outline: #e2e8f0;
+  --color-outline-variant: #f1f5f9;
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-text-link: #059669;
+
+  --color-error: #dc2626;
+  --color-success: #059669;
+  --color-warning: #d97706;
+
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-serif: "Noto Serif", Georgia, serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f8fafc;
+  color: #111827;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== TYPOGRAPHY ===== */
+.font-serif {
+  font-family: "Noto Serif", Georgia, serif;
+}
+
+.h1-serif {
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.h2-serif {
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #111827;
+}
+
+.h3-serif {
+  font-family: "Noto Serif", Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #111827;
+}
+
+.label-caps {
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ===== CARDS & SURFACES ===== */
+.card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.card-raised {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+}
+
+.executive-shadow {
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05),
+    0 2px 10px -2px rgba(0, 0, 0, 0.03);
+}
+
+/* ===== INPUTS ===== */
+.input-field {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #111827;
+  font-size: 14px;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.input-field:focus {
+  border-color: #059669;
+  box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.08);
+}
+
+.input-field::placeholder {
+  color: #d1d5db;
+}
+
+/* ===== BUTTONS ===== */
+.btn-primary {
+  background-color: #059669;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 13px 24px;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+}
+
+.btn-primary:hover {
+  background-color: #047857;
+  box-shadow: 0 6px 20px rgba(5, 150, 105, 0.25);
+}
+
+/* ===== GLASS (kept for login page only) ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* ===== SIDEBAR (for dashboard) ===== */
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.sidebar-item:hover {
+  background-color: #f9fafb;
+  color: #111827;
+}
+
+.sidebar-item.active {
+  background-color: #f0fdf4;
+  color: #059669;
+  font-weight: 600;
+}
+
+/* ===== STATUS BADGES ===== */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.badge-new {
+  background-color: #eff6ff;
+  color: #1d4ed8;
+}
+
+.badge-contacted {
+  background-color: #fefce8;
+  color: #a16207;
+}
+
+.badge-qualified {
+  background-color: #f0fdf4;
+  color: #15803d;
+}
+
+.badge-proposal {
+  background-color: #fdf4ff;
+  color: #7e22ce;
+}
+
+.badge-won {
+  background-color: #ecfdf5;
+  color: #059669;
+}
+
+.badge-lost {
+  background-color: #fef2f2;
+  color: #dc2626;
+}
+
+/* ===== TABLE ===== */
+.table-row {
+  border-bottom: 1px solid #f1f5f9;
+  transition: background-color 0.15s ease;
+}
+
+.table-row:hover {
+  background-color: #f8fafc;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background-color: rgba(5, 150, 105, 0.12);
+  color: #111827;
+}
+
+/* ===== CHECKBOX ===== */
+input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 4px;
+  background: #ffffff;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+input[type="checkbox"]:checked {
+  background: #059669;
+  border-color: #059669;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* ===== FOCUS VISIBLE ===== */
+:focus-visible {
+  outline: 2px solid #059669;
+  outline-offset: 2px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+/* ===== SELECT ===== */
+select option {
+  background: #ffffff;
+  color: #111827;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+/* ===== GRADIENT TEXT (kept for branding) ===== */
+.gradient-text {
+  background: linear-gradient(135deg, #006948, #059669);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
