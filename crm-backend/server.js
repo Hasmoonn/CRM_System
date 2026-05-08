@@ -14,17 +14,10 @@ connectDB();
 
 const app = express();
 
-app.use(
-  cors({
-    origin: [
-      "http://localhost:3000",
-      "http://localhost:3001",
-    ],
-    credentials: true,
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-  })
-);
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  credentials: true
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -46,11 +39,10 @@ app.use((req, res) => {
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).json({ message: "Something went wrong!", error: err.message });
+  res.status(500).json({
+    message: "Something went wrong!",
+    error: process.env.NODE_ENV === "production" ? null : err.message
+  });
 });
 
-const PORT = process.env.PORT || 4000;
-
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+export default app;
