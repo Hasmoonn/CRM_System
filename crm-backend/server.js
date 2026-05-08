@@ -15,16 +15,13 @@ connectDB();
 const app = express();
 
 app.use(cors());
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// Mount routes
 app.use("/api/auth", authRoutes);
 app.use("/api/leads", leadRoutes);
-app.use("/api/leads", noteRoutes);   
+app.use("/api/leads", noteRoutes);
 app.use("/api/dashboard", dashboardRoutes);
-
 
 app.get("/", (req, res) => {
   res.json({ message: "CRM API is running!" });
@@ -41,5 +38,12 @@ app.use((err, req, res, next) => {
     error: process.env.NODE_ENV === "production" ? null : err.message
   });
 });
+
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 4000;
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
 
 export default app;
