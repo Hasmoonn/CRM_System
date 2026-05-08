@@ -1,6 +1,7 @@
-@import "tailwindcss";
-
+/* ===== FONTS — must be FIRST before any rules ===== */
 @import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Noto+Serif:wght@600&display=swap");
+
+@import "tailwindcss";
 
 @theme {
   --color-primary: #006948;
@@ -170,7 +171,7 @@ body {
   box-shadow: 0 6px 20px rgba(5, 150, 105, 0.25);
 }
 
-/* ===== GLASS (kept for login page only) ===== */
+/* ===== GLASS ===== */
 .glass {
   background: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(20px);
@@ -178,7 +179,7 @@ body {
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
-/* ===== SIDEBAR (for dashboard) ===== */
+/* ===== SIDEBAR ===== */
 .sidebar-item {
   display: flex;
   align-items: center;
@@ -213,35 +214,12 @@ body {
   font-weight: 500;
 }
 
-.badge-new {
-  background-color: #eff6ff;
-  color: #1d4ed8;
-}
-
-.badge-contacted {
-  background-color: #fefce8;
-  color: #a16207;
-}
-
-.badge-qualified {
-  background-color: #f0fdf4;
-  color: #15803d;
-}
-
-.badge-proposal {
-  background-color: #fdf4ff;
-  color: #7e22ce;
-}
-
-.badge-won {
-  background-color: #ecfdf5;
-  color: #059669;
-}
-
-.badge-lost {
-  background-color: #fef2f2;
-  color: #dc2626;
-}
+.badge-new       { background-color: #eff6ff; color: #1d4ed8; }
+.badge-contacted { background-color: #fefce8; color: #a16207; }
+.badge-qualified { background-color: #f0fdf4; color: #15803d; }
+.badge-proposal  { background-color: #fdf4ff; color: #7e22ce; }
+.badge-won       { background-color: #ecfdf5; color: #059669; }
+.badge-lost      { background-color: #fef2f2; color: #dc2626; }
 
 /* ===== TABLE ===== */
 .table-row {
@@ -315,7 +293,6 @@ select option {
     opacity: 0;
     transform: translateY(8px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0);
@@ -326,7 +303,7 @@ select option {
   animation: fadeIn 0.4s ease forwards;
 }
 
-/* ===== GRADIENT TEXT (kept for branding) ===== */
+/* ===== GRADIENT TEXT ===== */
 .gradient-text {
   background: linear-gradient(135deg, #006948, #059669);
   -webkit-background-clip: text;
