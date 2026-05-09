@@ -210,7 +210,7 @@ export default function LeadCard({ lead, index }) {
                   whiteSpace: "nowrap",
                 }}
               >
-                ${lead.estimatedDealValue?.toLocaleString() || 0}
+                RS.{lead.estimatedDealValue?.toLocaleString() || 0}
               </span>
             </div>
             <div
