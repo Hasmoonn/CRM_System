@@ -198,7 +198,6 @@ export default function LeadTable({ leads, onDelete }) {
                       gap: "8px",
                     }}
                   >
-                    {/* ✅ FIX 1: Corrected template literal */}
                     <Link href={`/leads/${lead._id}`}>
                       <motion.button
                         whileHover={{ scale: 1.1 }}
@@ -228,7 +227,6 @@ export default function LeadTable({ leads, onDelete }) {
                       </motion.button>
                     </Link>
 
-                    {/* ✅ FIX 2: Corrected template literal */}
                     <Link href={`/leads/${lead._id}/edit`}>
                       <motion.button
                         whileHover={{ scale: 1.1 }}

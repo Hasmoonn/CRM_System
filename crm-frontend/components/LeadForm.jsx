@@ -239,7 +239,7 @@ export default function LeadForm({ initialData = {}, onSubmit, loading }) {
 
         {/* Deal Value */}
         <div>
-          <label style={labelStyle}>Estimated Deal Value ($)</label>
+          <label style={labelStyle}>Estimated Deal Value (RS.)</label>
           <input
             type="number"
             name="estimatedDealValue"
